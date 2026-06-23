@@ -1,0 +1,10 @@
+{
+  "type": "FeatureCollection",
+  "_meta": {
+    "generated": null,
+    "synthetic": false,
+    "source": "SIGMEP · CCSS/Min. Salud · DEE-INEC/PROCOMER · INCOFER/ARESEP",
+    "caveat": "Puntos de equipamiento (escuelas/salud/comercio/transporte). Vacío hasta correr el ETL."
+  },
+  "features": []
+}

@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection {
+    background: #cdbb8e44;
+  }
+}
+
+@layer utilities {
+  /* Numerales tabulares — obligatorios para que los valores alineen en columna. */
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Foco visible en cualquier control (WCAG AA). */
+:where(button, a, [tabindex], input):focus-visible {
+  outline: 2px solid #cdbb8e;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Scrollbars discretas. */
+::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2f37;
+  border-radius: 4px;
+}
+
+/* MapLibre sobre fondo oscuro. */
+.maplibregl-map {
+  background: transparent;
+  font-family: "Archivo", system-ui, sans-serif;
+}
+.maplibregl-ctrl-attrib.maplibregl-compact {
+  background: rgba(21, 24, 29, 0.85);
+}
+.maplibregl-ctrl-attrib,
+.maplibregl-ctrl-attrib a {
+  color: #686e76;
+  font-size: 9.5px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}

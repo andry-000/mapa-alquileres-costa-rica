@@ -1,0 +1,10 @@
+# ETL del Atlas del Alquiler — Python 3.10+
+# Instalar en un entorno aislado:  python -m venv .venv && pip install -r requirements.txt
+geopandas>=0.14
+pandas>=2.0
+shapely>=2.0
+pyproj>=3.6
+fiona>=1.9
+openpyxl>=3.1      # tabulados Excel del Censo 2022
+requests>=2.31     # descargas de servicios REST/ArcGIS (SIGMEP, etc.)
+topojson>=1.7      # geojson -> topojson opcional (alternativa: mapshaper CLI)

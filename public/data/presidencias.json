@@ -1,0 +1,11 @@
+[
+  { "nombre": "José María Figueres Olsen", "inicio": 1994, "fin": 1998, "partido": "PLN" },
+  { "nombre": "Miguel Ángel Rodríguez", "inicio": 1998, "fin": 2002, "partido": "PUSC" },
+  { "nombre": "Abel Pacheco", "inicio": 2002, "fin": 2006, "partido": "PUSC" },
+  { "nombre": "Óscar Arias Sánchez", "inicio": 2006, "fin": 2010, "partido": "PLN" },
+  { "nombre": "Laura Chinchilla Miranda", "inicio": 2010, "fin": 2014, "partido": "PLN" },
+  { "nombre": "Luis Guillermo Solís", "inicio": 2014, "fin": 2018, "partido": "PAC" },
+  { "nombre": "Carlos Alvarado Quesada", "inicio": 2018, "fin": 2022, "partido": "PAC" },
+  { "nombre": "Rodrigo Chaves Robles", "inicio": 2022, "fin": 2026, "partido": "PPSD" },
+  { "nombre": "Laura Fernández Delgado", "inicio": 2026, "fin": 2030, "partido": "PPSO" }
+]

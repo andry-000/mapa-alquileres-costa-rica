@@ -1,0 +1,12 @@
+{
+  "_meta": {
+    "generated": null,
+    "synthetic": false,
+    "source": "ONT-Hacienda (valores de terreno por zona homogénea = proxy de plusvalía) · Inside Airbnb (densidad short-term) · flag de zona turística",
+    "granularity": "distrito",
+    "coverage": "snapshot (fecha de descarga en data_dictionary.md)",
+    "caveat": "Capa narrativa: índice compuesto de presión. El proxy de plusvalía y la densidad Airbnb no son medidas oficiales de gentrificación; el ícono cultural acompaña la cifra de desplazamiento, nunca la sustituye.",
+    "censusWave": 2022
+  },
+  "districts": {}
+}

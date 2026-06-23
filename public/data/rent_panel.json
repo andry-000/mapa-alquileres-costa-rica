@@ -1,0 +1,12 @@
+{
+  "_meta": {
+    "generated": null,
+    "synthetic": false,
+    "source": "INEC · IPC subíndice de alquiler (BCCR) + ENAHO (renta efectiva); renta de oferta vía scraping de portales",
+    "granularity": "distrito × año × moneda (CRC/USD)",
+    "coverage": "serie robusta desde 2010; años previos = 'sin serie'",
+    "caveat": "Renta de oferta ≠ renta efectiva (ENAHO). Las rentas en USD no se reajustan por ley: no se mezclan con CRC en una misma serie de crecimiento.",
+    "robustFromYear": 2010
+  },
+  "districts": {}
+}

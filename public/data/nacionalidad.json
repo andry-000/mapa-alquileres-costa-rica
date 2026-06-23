@@ -1,0 +1,11 @@
+{
+  "_meta": {
+    "generated": null,
+    "synthetic": false,
+    "source": "INEC · Censo de Población",
+    "granularity": "distrito (según ola)",
+    "coverage": "olas censales 2000 / 2011 / 2022",
+    "caveat": "Dato por ola censal, no anual — no se interpola. La ola es por distrito (campo wave). No se georreferencia por debajo de la resolución censal disponible."
+  },
+  "districts": {}
+}

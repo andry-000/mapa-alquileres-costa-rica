@@ -1,0 +1,12 @@
+{
+  "_meta": {
+    "generated": null,
+    "synthetic": false,
+    "source": "INEC · Censo de Vivienda",
+    "granularity": "distrito (2011) / cantón (2022)",
+    "coverage": "olas censales 2011 y 2022",
+    "caveat": "El Censo 2022 publica tenencia a nivel cantón; 2011 a nivel distrito. No se interpola entre olas.",
+    "censusWave": "2011-distrital/2022-cantonal"
+  },
+  "districts": {}
+}

@@ -1,0 +1,12 @@
+{
+  "_meta": {
+    "generated": null,
+    "synthetic": false,
+    "source": "SIGMEP (escuelas) · CCSS/Min. Salud (EBAIS/hospitales) · DEE-INEC/PROCOMER (comercio) · INCOFER/ARESEP (transporte)",
+    "granularity": "distrito",
+    "coverage": "snapshot de equipamiento (fecha de descarga en data_dictionary.md)",
+    "caveat": "Distancia al equipamiento más cercano precomputada con geopandas.sjoin_nearest en CRTM05 (EPSG:5367) para distancias métricas; índice compuesto 0–100.",
+    "censusWave": 2022
+  },
+  "districts": {}
+}
