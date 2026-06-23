@@ -22,8 +22,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
-      - run: npm ci
+      # No package-lock.json se versiona todavía. Tras el primer `npm install`
+      # local, commiteá package-lock.json y cambiá a `cache: npm` + `npm ci`
+      # para builds reproducibles y más rápidos.
+      - run: npm install --no-audit --no-fund
       - name: Build
         run: npm run build
         env:
