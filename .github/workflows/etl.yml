@@ -1,0 +1,54 @@
+name: Run ETL (cloud)
+
+# Corre el ETL en Python EN GITHUB — no necesitás instalar nada localmente.
+# Disparalo a mano desde la pestaña Actions → "Run ETL (cloud)" → Run workflow.
+#
+# mode = real : corre etl/run_all.py con los insumos que estén en etl/input/.
+#               Como etl/input/* está en .gitignore, subilos primero a una rama
+#               (vía la web de GitHub: "Add file" dentro de etl/input/, o
+#               `git add -f etl/input/<archivo>` desde tu equipo) y corré el
+#               workflow sobre esa rama. Commitea los artefactos reales generados.
+# mode = demo : corre etl/99_seed_demo.py (datos SINTÉTICOS etiquetados) y
+#               commitea esos artefactos — útil sólo para previsualizar.
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "real (fuentes oficiales en etl/input/) o demo (sintético)"
+        type: choice
+        options: [real, demo]
+        default: real
+
+permissions:
+  contents: write
+
+jobs:
+  etl:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install ETL deps (real mode)
+        if: ${{ inputs.mode == 'real' }}
+        run: pip install -r etl/requirements.txt
+      - name: Run ETL
+        run: |
+          if [ "${{ inputs.mode }}" = "real" ]; then
+            python etl/run_all.py
+          else
+            python etl/99_seed_demo.py
+          fi
+      - name: Commit generated artifacts
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data
+          if git diff --cached --quiet; then
+            echo "Sin cambios en public/data — nada que commitear."
+          else
+            git commit -m "data: artefactos del ETL (mode=${{ inputs.mode }})"
+            git push
+          fi

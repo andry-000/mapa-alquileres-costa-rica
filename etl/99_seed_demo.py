@@ -40,6 +40,15 @@ def _write(name: str, obj: dict) -> None:
 
 
 def main() -> None:
+    # Safety: never overwrite REAL ETL output. If rent_panel.json already holds
+    # real (non-synthetic, generated) data, skip seeding entirely.
+    rp = OUT / "rent_panel.json"
+    if rp.exists():
+        m = json.loads(rp.read_text(encoding="utf-8")).get("_meta", {})
+        if m.get("generated") and not m.get("synthetic", False):
+            print("  · datos reales presentes — seed OMITIDO (no se sobrescribe).")
+            return
+
     geo = json.loads((OUT / "distritos.geojson").read_text(encoding="utf-8"))
     ids = [
         (str(f["properties"]["shapeID"]), str(f["properties"].get("shapeName", "")))
